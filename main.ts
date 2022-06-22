@@ -6,10 +6,6 @@ const { Client, Collection, Intents } = require ('discord.js');
 const clientLoco = new Client({ intents: [Intents.FLAGS.GUILDS] });
 clientLoco.commands = new Collection();
 
-clientLoco.once('ready', () => {
-    console.log(`${clientLoco.user.tag} ready for action!`);
-});
-
 const commandsPath = path.join(__dirname, 'commands');
 const eventsPath = path.join(__dirname, 'events');
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.ts'));
