@@ -4,28 +4,33 @@ After sometime not working on Discord Bots, I have returned, I made the choice o
 
  - Invite Link: https://discord.com/oauth2/authorize?client_id=987370053068521503&permissions=8&scope=bot%20applications.commands
 
-## TODO before Usage
-These Commands only need to be run on intital setup and when changes are made.
+## Prerequisite
+ - Node (v17.4.0 was used for development and is known to work)
+ - Bash or Powershell Terminal (zsh and powershell were both used in development and are known to work)
 
-Run in Terminal
+## TODO before Usage
+These Commands only need to be run on intital setup.
+
+To download and install the npm dependencies run in the Terminal: 
 ```bash
 npm install
 ```
 
-Create file named exactly `.env` with the following contents.
-```env
-DISCORD_TOKEN = YOUR_BOT_TOKEN
-DISCORD_CLIENT_ID = YOUR_BOT_CLIENT_ID
-DISCORD_DEV_GUILD_ID = YOUR_DEVELOPMENT_SERVER_ID
-```
-
-Run in Terminal
+To Create the .env file run in the Terminal: 
 ```bash
-node regCommands.ts
+npm run create
 ```
+Open the `.env` file and add the required information.
+
 ## Usage
 Run in Terminal
 ```bash
-node main.ts
+npm start
 ```
 Use CTRL+C to kill the Bot.
+
+## Registering new commands
+When a new command is added in the `commands` directory run in the terminal:
+```bash
+npm run reg
+```
