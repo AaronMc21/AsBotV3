@@ -16,7 +16,7 @@ To download and install the npm dependencies run in the Terminal:
 npm install
 ```
 
-To Create the .env file run in the Terminal: 
+To Create the `.env` file run in the Terminal: 
 ```bash
 npm run create
 ```
