@@ -10,9 +10,9 @@ module.exports = {
 				.setRequired(false)),
 	async execute(interaction) {
 		if (interaction.options.getUser('user') == null) {
-			await interaction.reply(interaction.user.displayAvatarURL());
+			await interaction.reply(`${interaction.user.displayAvatarURL()}?size=2048`);
 		} else {
-			await interaction.reply(interaction.options.getUser('user').displayAvatarURL());
+			await interaction.reply(`${interaction.options.getUser('user').displayAvatarURL()}?size=2048`);
 		}
 	},
 };
