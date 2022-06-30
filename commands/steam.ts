@@ -1,4 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
+const XMLHttpRequest = require('xhr2');
+require('dotenv').config();
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -39,7 +41,14 @@ module.exports = {
 		} else if (interaction.options.getSubcommand() === 'steamid3') {
 			await interaction.reply(`SteamID3: ${interaction.options.getString('input')}`);
 		} else if (interaction.options.getSubcommand() === 'steamid64') {
-			await interaction.reply(`SteamID64: ${interaction.options.getString('input')}`);
+			const http = new XMLHttpRequest();
+
+			http.open('GET', `https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${process.env.STEAM_WEB_API_KEY}&steamids=${interaction.options.getString('input')}&format=xml`);
+			http.send();
+			http.onload = () =>{
+				var res = http.responseText;
+				interaction.reply(`Information for SteamID64: ${interaction.options.getString('input')} data: ${res}`);
+			};
 		} else if (interaction.options.getSubcommand() === 'customurl') {
 			await interaction.reply(`CustomURL: ${interaction.options.getString('input')}`);
 		}
