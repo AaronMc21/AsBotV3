@@ -9,6 +9,6 @@
   "scripts": {
 	"start": "node main.ts",
 	"reg": "node regCommands.ts",
-	"create": "echo DISCORD_TOKEN = YOUR_BOT_TOKEN > .env && echo DISCORD_CLIENT_ID = YOUR_BOT_CLIENT_ID >> .env"
+	"create": "echo DISCORD_TOKEN = YOUR_BOT_TOKEN > .env && echo DISCORD_CLIENT_ID = YOUR_BOT_CLIENT_ID >> .env && echo STEAM_WEB_API_KEY = YOUR_STEAM_WEB_API_KEY >> .env"
   }
 }
